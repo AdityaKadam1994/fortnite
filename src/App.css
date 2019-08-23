@@ -1,0 +1,119 @@
+*,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  text-align: center;
+}
+
+.nav-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background: #0F2027;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.nav-list a {
+  text-decoration: none;
+}
+
+.nav-list li {
+  padding: 0 15px;
+  color: white;
+  text-decoration: none;
+}
+
+.item-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 30px 20px;
+}
+
+.item-wrapper {
+  flex-basis: 22%;
+  margin: 10px 0;
+  background: #CB356B;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #BD3F32, #CB356B);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  padding: 15px 10px;
+  border-radius: 10px;
+
+}
+
+.item-wrapper img {
+  width: 100%;
+}
+
+.full-box h1 {
+  margin-top: 20px;
+}
+
+.upcoming-wrapper {
+  background: #00c6ff;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.item-main a {
+  flex-basis: 22%;
+  text-decoration: none;
+}
+
+.details-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.details-box h1 {
+  margin-bottom: 20px;
+}
+
+.details-box img {
+  width: 300px;
+
+}
+
+.upcoming-items {
+  flex-basis: 40%;
+  background: #00c6ff;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #0072ff, #00c6ff);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #0072ff, #00c6ff);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  border-radius: 10px;
+  padding-bottom: 20px;
+  color: white;
+}
+
+.weapon-wrapper {
+  background: #232526;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #414345, #232526);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #414345, #232526);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
