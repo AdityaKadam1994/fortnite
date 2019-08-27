@@ -143,3 +143,7 @@ body {
 .news-image {
   width: 600px;
 }
+
+.full-box h1 {
+  text-align: center;
+}
