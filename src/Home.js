@@ -25,7 +25,7 @@ function Home() {
         news.slice(0, 10).map(news => (
           <div className="external-news-wrapper" key={news.title}>
             <h3 className="news-head">{news.title}</h3>
-            <img src={news.image} className="news-image" />
+            <img src={news.image} alt={news.title} className="news-image" />
             <p className="news-description">{news.body}</p>
           </div>
         ))
