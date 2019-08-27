@@ -3,22 +3,22 @@ import React, { useState, useEffect } from "react";
 function ItemDetails({ match }) {
   const [item, setData] = useState({});
   useEffect(() => {
+    const getItemDet = async () => {
+      const response = await fetch(
+        `https://fortnite-api.theapinetwork.com/item/get?id=${match.params.id}
+  `,
+        {
+          method: "GET",
+          headers: {
+            Authorization: "9f4f414cd34a145f5b1571fa6cc42412"
+          }
+        }
+      );
+      const responseData = await response.json();
+      setData(responseData.data.item);
+    };
     getItemDet();
   }, [match.params.id]);
-  const getItemDet = async () => {
-    const response = await fetch(
-      `https://fortnite-api.theapinetwork.com/item/get?id=${match.params.id}
-`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: "9f4f414cd34a145f5b1571fa6cc42412"
-        }
-      }
-    );
-    const responseData = await response.json();
-    setData(responseData.data.item);
-  };
   return (
     console.log(item),
     (
