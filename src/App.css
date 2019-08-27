@@ -5,9 +5,7 @@ body {
   box-sizing: border-box;
 }
 
-.App {
-  text-align: center;
-}
+.App {}
 
 .nav-list {
   display: flex;
@@ -116,4 +114,28 @@ body {
   background: linear-gradient(to left, #414345, #232526);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
+}
+
+.news-box {
+  padding: 20px;
+  background: #757F9A;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #D7DDE8, #757F9A);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #D7DDE8, #757F9A);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.news-head {
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+
+.external-news-wrapper {
+  margin-bottom: 20px;
+}
+
+.news-image {
+  width: 600px;
 }
