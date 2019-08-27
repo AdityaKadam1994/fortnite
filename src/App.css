@@ -119,6 +119,9 @@ body {
 .news-box {
   padding: 20px;
   background: #757F9A;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to bottom, #D7DDE8, #757F9A);
   /* Chrome 10-25, Safari 5.1-6 */
@@ -134,6 +137,7 @@ body {
 
 .external-news-wrapper {
   margin-bottom: 20px;
+  flex-basis: 50%;
 }
 
 .news-image {
