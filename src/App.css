@@ -114,7 +114,7 @@ body {
   /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #414345, #232526);
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+  text-align: center;
 }
 
 .news-box {
@@ -147,4 +147,12 @@ body {
 
 .full-box h1 {
   text-align: center;
+}
+
+.stats-wrapper {
+  text-align: center;
+}
+
+.stats-wrapper h1 {
+  margin: 10px 0;
 }

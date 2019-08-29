@@ -1,26 +1,29 @@
 import React, { useState, useEffect } from "react";
+import weaponAction from "./store/actions/weaponAction";
+import { connect } from "react-redux";
 
-function Weapons() {
-  const [weapons, setWeapon] = useState([]);
+function Weapons({ weapons, fetchWeapons }) {
+  // const [weapons, setWeapon] = useState([]);
   useEffect(() => {
-    getWeapon();
+    // getWeapon();
+    fetchWeapons();
   }, []);
 
-  const getWeapon = async () => {
-    const response = await fetch(
-      "https://fortnite-api.theapinetwork.com/weapons/get",
-      {
-        method: "GET",
+  // const getWeapon = async () => {
+  //   const response = await fetch(
+  //     "https://fortnite-api.theapinetwork.com/weapons/get",
+  //     {
+  //       method: "GET",
 
-        headers: {
-          Authorization: "9f4f414cd34a145f5b1571fa6cc42412"
-        }
-      }
-    );
-    const responseData = await response.json();
-    setWeapon(responseData.data.entries);
-    console.log(responseData.data);
-  };
+  //       headers: {
+  //         Authorization: "9f4f414cd34a145f5b1571fa6cc42412"
+  //       }
+  //     }
+  //   );
+  //   const responseData = await response.json();
+  //   setWeapon(responseData.data.entries);
+  //   console.log(responseData.data);
+  // };
 
   return (
     <div className="full-box">
@@ -63,4 +66,20 @@ function Weapons() {
   );
 }
 
-export default Weapons;
+const mapStateToProps = state => {
+  console.log(state);
+  return {
+    weapons: state.weapons
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    fetchWeapons: () => dispatch(weaponAction)
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Weapons);
