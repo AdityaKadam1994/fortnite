@@ -4,6 +4,7 @@ import "./App.css";
 
 function Items() {
   const [items, setItems] = useState([]);
+  const [load, setLoad] = useState(true);
   const getItems = async () => {
     const response = await fetch(
       "https://fortnite-api.theapinetwork.com/items/list",
@@ -15,6 +16,7 @@ function Items() {
       }
     );
     const responseData = await response.json();
+    setLoad(false);
     setItems(responseData.data);
   };
   useEffect(() => {
@@ -24,39 +26,43 @@ function Items() {
   return (
     <div className="full-box">
       <h1>Items</h1>
-      <div className="item-main">
-        {items ? (
-          items.slice(0, 10).map((item, index) => (
-            <div className="item-wrapper" key={item.itemId}>
-              <div className="inner-item">
-                <img src={item.item.images.background} alt="" />
-                <h2>{item.item.name}</h2>
-                <p>
-                  <strong>Description: </strong>
-                  {item.item.description}
-                </p>
-                <p>
-                  <strong>Cost: </strong>
-                  {item.item.obtained}
-                  &nbsp;
-                  {item.item.obtained_type}
-                </p>
-                <p>
-                  <strong>Type: </strong>
-                  {item.item.type}
-                </p>
-                <p>
-                  <strong>Rarity: </strong>
-                  {item.item.rarity}
-                </p>
+      {load ? (
+        <h1>Loading...</h1>
+      ) : (
+        <div className="item-main">
+          {items ? (
+            items.slice(0, 10).map((item, index) => (
+              <div className="item-wrapper" key={item.itemId}>
+                <div className="inner-item">
+                  <img src={item.item.images.background} alt="" />
+                  <h2>{item.item.name}</h2>
+                  <p>
+                    <strong>Description: </strong>
+                    {item.item.description}
+                  </p>
+                  <p>
+                    <strong>Cost: </strong>
+                    {item.item.obtained}
+                    &nbsp;
+                    {item.item.obtained_type}
+                  </p>
+                  <p>
+                    <strong>Type: </strong>
+                    {item.item.type}
+                  </p>
+                  <p>
+                    <strong>Rarity: </strong>
+                    {item.item.rarity}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))
-        ) : (
-          <div>No Data Found</div>
-        )}
-      </div>
-      <UpcomingItems />
+            ))
+          ) : (
+            <div>No Data Found</div>
+          )}
+          <UpcomingItems />
+        </div>
+      )}
     </div>
   );
 }

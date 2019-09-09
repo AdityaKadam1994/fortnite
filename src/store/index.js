@@ -7,7 +7,7 @@ import thunk from "redux-thunk";
 const initialStates = {
   name: { name: "Aditya" },
   game: { game: "Cricket" },
-  weapons: []
+  weapons: { load: true }
 };
 
 //Combined Reducer
@@ -15,7 +15,8 @@ const initialStates = {
 const allReducer = combineReducers({
   name: nameReducer,
   game: gameReducer,
-  weapons: weaponReducer
+  weapons: weaponReducer,
+  load: weaponReducer
 });
 
 const middleware = [thunk];

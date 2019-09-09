@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import weaponAction from "./store/actions/weaponAction";
 import { connect } from "react-redux";
 
@@ -8,6 +8,7 @@ function Weapons({ weapons, fetchWeapons }) {
     // getWeapon();
     fetchWeapons();
   }, []);
+  console.log(weapons.load);
 
   // const getWeapon = async () => {
   //   const response = await fetch(
@@ -29,8 +30,10 @@ function Weapons({ weapons, fetchWeapons }) {
     <div className="full-box">
       <h1>Weapon List</h1>
       <div className="item-main">
-        {weapons ? (
-          weapons.slice(0, 60).map((weapon, index) => (
+        {weapons.load ? (
+          <h1>Loading...</h1>
+        ) : weapons.weapon ? (
+          weapons.weapon.slice(0, 60).map((weapon, index) => (
             <div className="item-wrapper weapon-wrapper" key={index}>
               <div className="inner-item">
                 <img src={weapon.image} alt="" />
@@ -67,13 +70,14 @@ function Weapons({ weapons, fetchWeapons }) {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
+  // console.log(state);
   return {
-    weapons: state.weapons
+    weapons: state.weapons,
+    load: state.load
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, ownProps) => {
   return {
     fetchWeapons: () => dispatch(weaponAction)
   };

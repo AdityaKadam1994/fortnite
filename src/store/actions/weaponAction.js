@@ -8,7 +8,12 @@ const weaponAction = dispatch => {
     }
   })
     .then(res => res.json())
-    .then(res => dispatch({ type: "updt_weapon", payload: res.data.entries }));
+    .then(res =>
+      dispatch({
+        type: "updt_weapon",
+        payload: { weapon: res.data.entries, load: false }
+      })
+    );
 };
 
 export default weaponAction;

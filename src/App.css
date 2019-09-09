@@ -5,8 +5,6 @@ body {
   box-sizing: border-box;
 }
 
-.App {}
-
 .nav-list {
   display: flex;
   list-style: none;
@@ -155,4 +153,41 @@ body {
 
 .stats-wrapper h1 {
   margin: 10px 0;
+}
+
+.search-form {
+  margin-bottom: 15px;
+}
+
+.search-form .search-btn {
+  height: 30px;
+  padding: 0 10px;
+}
+
+.search-form input {
+  height: 30px;
+}
+
+.userWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.userWrapper h3 {
+  text-decoration: underline;
+}
+
+.userWrapper>div {
+  flex-basis: 30%;
+  padding: 10px 0;
+  background: #4568DC;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to bottom, #B06AB3, #4568DC);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to bottom, #B06AB3, #4568DC);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  color: white;
+  border-radius: 15px;
+  margin-bottom: 30px;
+
 }

@@ -5,6 +5,7 @@ function Home() {
     getNews();
   }, []);
   const [news, setNews] = useState([]);
+  const [load, setLoad] = useState(true);
 
   const getNews = async () => {
     const response = await fetch(
@@ -15,13 +16,16 @@ function Home() {
       }
     );
     const responseData = await response.json();
+    setLoad(false);
     setNews(responseData.data);
-    console.log(responseData.data);
+    // console.log(responseData.data);
   };
 
   return (
     <div className="full-box news-box">
-      {news ? (
+      {load ? (
+        <h1>Loading...</h1>
+      ) : news ? (
         news.slice(0, 10).map(news => (
           <div className="external-news-wrapper" key={news.title}>
             <h3 className="news-head">{news.title}</h3>
